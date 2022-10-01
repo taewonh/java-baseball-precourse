@@ -3,9 +3,8 @@ package baseball.domain;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
 
-public class UserTest {
+public class UserTest extends AbstractDomainTest {
 
 	@Test
 	public void 정답_입력_테스트() {
@@ -13,7 +12,7 @@ public class UserTest {
 		User user = setInInput(input);
 		user.input();
 
-		Assertions.assertEquals(input, user.getInput());
+		Assertions.assertEquals(input.length(), user.getNumbers().size());
 	}
 
 	@Test
@@ -30,12 +29,5 @@ public class UserTest {
 			User user = setInInput("1234");
 			user.input();
 		});
-	}
-
-	private User setInInput(String input) {
-		Computer computer = new Computer();
-		User user = new User(computer.getBallSize());
-		System.setIn(new ByteArrayInputStream(input.getBytes()));
-		return user;
 	}
 }
