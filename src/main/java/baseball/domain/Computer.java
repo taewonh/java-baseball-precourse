@@ -62,4 +62,8 @@ public class Computer {
 	public List<Integer> getAnswers() {
 		return answers;
 	}
+
+	public int getBallSize() {
+		return ballSize;
+	}
 }
