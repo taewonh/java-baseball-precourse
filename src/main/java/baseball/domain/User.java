@@ -2,6 +2,7 @@ package baseball.domain;
 
 import camp.nextstep.edu.missionutils.Console;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -26,6 +27,7 @@ public class User {
 	}
 
 	private void insertNumber(String input) {
+		numbers = new ArrayList<>();
 		for (String num : input.split("")) {
 			numbers.add(Integer.parseInt(num));
 		}
