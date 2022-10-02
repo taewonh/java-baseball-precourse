@@ -24,11 +24,11 @@ public class Computer {
 	}
 
 	private Set<Integer> generateNumberBox() {
-		Set<Integer> pickBox = new HashSet<>();
+		Set<Integer> numberBox = new HashSet<>();
 		for (int num = 1; num <= 9; num++) {
-			pickBox.add(num);
+			numberBox.add(num);
 		}
-		return pickBox;
+		return numberBox;
 	}
 
 	private int pickNumber(Set<Integer> pickBox) {
