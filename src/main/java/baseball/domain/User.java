@@ -9,7 +9,7 @@ public class User {
 	private List<Integer> numbers;
 
 	public void inputNumber() {
-		System.out.print("숫자를 입력해주세요 :");
+		System.out.print("숫자를 입력해주세요 : ");
 		String input = Console.readLine();
 		validateInput(input);
 		insertNumber(input);
