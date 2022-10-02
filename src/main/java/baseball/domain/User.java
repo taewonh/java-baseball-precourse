@@ -12,7 +12,7 @@ public class User {
 		System.out.print("숫자를 입력해주세요 : ");
 		String input = Console.readLine();
 		validateInput(input);
-		insertNumber(input);
+		addNumberToList(input);
 	}
 
 	private void validateInput(String input) {
@@ -26,7 +26,7 @@ public class User {
 		}
 	}
 
-	private void insertNumber(String input) {
+	private void addNumberToList(String input) {
 		numbers = new ArrayList<>();
 		for (String num : input.split("")) {
 			numbers.add(Integer.parseInt(num));
