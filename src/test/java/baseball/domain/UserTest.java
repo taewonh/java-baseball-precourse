@@ -10,8 +10,6 @@ public class UserTest extends AbstractDomainTest {
 	public void 정답_입력_테스트() {
 		String input = "123";
 		User user = setInInput(input);
-		user.inputNumber();
-
 		Assertions.assertEquals(input.length(), user.getNumbers().size());
 	}
 
@@ -19,7 +17,6 @@ public class UserTest extends AbstractDomainTest {
 	public void 숫자가_아닌_문자_입력_테스트() {
 		Assertions.assertThrowsExactly(IllegalArgumentException.class, () -> {
 			User user = setInInput("Illegal Character");
-			user.inputNumber();
 		});
 	}
 
@@ -27,7 +24,6 @@ public class UserTest extends AbstractDomainTest {
 	public void 범위를_초과하는_숫자_입력_테스트() {
 		Assertions.assertThrowsExactly(IllegalArgumentException.class, () -> {
 			User user = setInInput("1234");
-			user.inputNumber();
 		});
 	}
 }
