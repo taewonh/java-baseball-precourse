@@ -37,16 +37,15 @@ public class Referee {
 
 	private void printJudgeResult() {
 		if (strike == 0 && ball == 0) {
-			System.out.println("낫싱");
+			System.out.print(" 낫싱");
 		}
-		StringBuilder builder = new StringBuilder();
 		if (ball != 0) {
-			builder.append(ball).append("볼").append(" ");
+			System.out.print(" " + ball + "볼");
 		}
 		if (strike != 0) {
-			builder.append(strike).append("스트라이크");
+			System.out.print(" " + strike + "스트라이크");
 		}
-		System.out.println(builder.toString());
+		System.out.println();
 	}
 
 	public boolean continuesGame() {
