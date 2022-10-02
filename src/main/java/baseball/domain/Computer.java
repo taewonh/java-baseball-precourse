@@ -9,21 +9,21 @@ import java.util.Set;
 
 public class Computer {
 
-	private List<Integer> answers;
+	private final List<Integer> numbers;
 
 	public Computer() {
-		answers = new ArrayList<>();
-		generateAnswers();
+		numbers = new ArrayList<>();
+		generateNumbers();
 	}
 
-	private void generateAnswers() {
-		Set<Integer> pickBox = generatePickBox();
+	private void generateNumbers() {
+		Set<Integer> numberBox = generateNumberBox();
 		for (int count = 0; count < 3; count++) {
-			answers.add(pickAnswer(pickBox));
+			numbers.add(pickNumber(numberBox));
 		}
 	}
 
-	private Set<Integer> generatePickBox() {
+	private Set<Integer> generateNumberBox() {
 		Set<Integer> pickBox = new HashSet<>();
 		for (int num = 1; num <= 9; num++) {
 			pickBox.add(num);
@@ -31,18 +31,18 @@ public class Computer {
 		return pickBox;
 	}
 
-	private int pickAnswer(Set<Integer> pickBox) {
+	private int pickNumber(Set<Integer> pickBox) {
 		boolean allowPick = true;
-		int answer = 0;
+		int number = 0;
 		while (allowPick) {
-			answer = Randoms.pickNumberInRange(1, 9);
-			allowPick = !pickBox.contains(answer);
+			number = Randoms.pickNumberInRange(1, 9);
+			allowPick = !pickBox.contains(number);
 		}
-		pickBox.remove(answer);
-		return answer;
+		pickBox.remove(number);
+		return number;
 	}
 
-	public List<Integer> getAnswers() {
-		return answers;
+	public List<Integer> getNumbers() {
+		return numbers;
 	}
 }

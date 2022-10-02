@@ -7,11 +7,11 @@ import java.util.List;
 public class User {
 	private List<Integer> numbers;
 
-	public void input() {
+	public void inputNumber() {
 		System.out.print("숫자를 입력해주세요 :");
 		String input = Console.readLine();
 		validateInput(input);
-		inputNumber(input);
+		insertNumber(input);
 	}
 
 	private void validateInput(String input) {
@@ -25,10 +25,8 @@ public class User {
 		}
 	}
 
-	private void inputNumber(String input) {
-		String[] split = input.split("");
-		for (int index = 0; index < split.length; index++) {
-			String num = split[index];
+	private void insertNumber(String input) {
+		for (String num : input.split("")) {
 			numbers.add(Integer.parseInt(num));
 		}
 	}
