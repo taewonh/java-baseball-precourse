@@ -1,5 +1,6 @@
 package baseball.model;
 
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,12 @@ public class UserTest extends AbstractDomainTest {
     public void 숫자_입력_테스트() {
         String input = "123";
         User user = setInInput(input);
-        Assertions.assertEquals(input.length(), user.getNumbers().size());
+        List<Integer> numbers = user.getNumbers();
+        Assertions.assertEquals(input.length(), numbers.size());
+        for (int index = 0; index < input.length(); index++) {
+            String inputNumber = input.split("")[index];
+            Assertions.assertEquals(Integer.parseInt(inputNumber), numbers.get(index));
+        }
     }
 
     @Test
