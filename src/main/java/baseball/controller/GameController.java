@@ -3,6 +3,7 @@ package baseball.controller;
 import baseball.model.Computer;
 import baseball.model.Referee;
 import baseball.model.User;
+import baseball.view.PrintManager;
 
 
 public class GameController {
@@ -21,9 +22,11 @@ public class GameController {
 
     public void start() {
         while (referee.continuesGame()) {
+            PrintManager.printInputNumber();
             user.inputNumber();
             referee.judgeInning(computer, user);
+            PrintManager.printCount(referee.getStrikeCount(), referee.getBallCount());
         }
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        PrintManager.printFinishGame();
     }
 }

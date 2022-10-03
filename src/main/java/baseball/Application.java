@@ -1,6 +1,7 @@
 package baseball;
 
 import baseball.controller.GameController;
+import baseball.view.PrintManager;
 import camp.nextstep.edu.missionutils.Console;
 
 public class Application {
@@ -17,7 +18,7 @@ public class Application {
     }
 
     private void checkContinue() {
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        PrintManager.printCheckContinueGame();
         String input = Console.readLine();
         if ("1".equals(input)) {
             return;

@@ -10,7 +10,6 @@ public class Referee {
     public void judgeInning(Computer computer, User user) {
         initBallCount();
         judgeBallCount(computer, user);
-        printJudgeResult();
     }
 
     private void initBallCount() {
@@ -36,17 +35,12 @@ public class Referee {
         }
     }
 
-    private void printJudgeResult() {
-        if (strikeCount == 0 && ballCount == 0) {
-            System.out.print("낫싱");
-        }
-        if (ballCount != 0) {
-            System.out.print(ballCount + "볼 ");
-        }
-        if (strikeCount != 0) {
-            System.out.print(strikeCount + "스트라이크 ");
-        }
-        System.out.println();
+    public int getBallCount() {
+        return ballCount;
+    }
+
+    public int getStrikeCount() {
+        return strikeCount;
     }
 
     public boolean continuesGame() {
