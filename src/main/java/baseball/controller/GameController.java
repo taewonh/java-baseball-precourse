@@ -1,8 +1,8 @@
 package baseball.controller;
 
-import baseball.domain.Computer;
-import baseball.domain.Referee;
-import baseball.domain.User;
+import baseball.model.Computer;
+import baseball.model.Referee;
+import baseball.model.User;
 
 
 public class GameController {
