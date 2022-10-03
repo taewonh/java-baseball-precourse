@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Referee {
 
-    private int ball;
-    private int strike;
+    private int ballCount;
+    private int strikeCount;
 
     public void judgeInning(Computer computer, User user) {
         initBallCount();
@@ -14,8 +14,8 @@ public class Referee {
     }
 
     private void initBallCount() {
-        ball = 0;
-        strike = 0;
+        ballCount = 0;
+        strikeCount = 0;
     }
 
     private void judgeBallCount(Computer computer, User user) {
@@ -28,28 +28,28 @@ public class Referee {
 
     private void increaseBallCount(int userNumber, int userNumberIndex, List<Integer> computerNumbers) {
         if (computerNumbers.indexOf(userNumber) == userNumberIndex) {
-            strike++;
+            strikeCount++;
             return;
         }
         if (computerNumbers.contains(userNumber)) {
-            ball++;
+            ballCount++;
         }
     }
 
     private void printJudgeResult() {
-        if (strike == 0 && ball == 0) {
+        if (strikeCount == 0 && ballCount == 0) {
             System.out.print("낫싱");
         }
-        if (ball != 0) {
-            System.out.print(ball + "볼 ");
+        if (ballCount != 0) {
+            System.out.print(ballCount + "볼 ");
         }
-        if (strike != 0) {
-            System.out.print(strike + "스트라이크 ");
+        if (strikeCount != 0) {
+            System.out.print(strikeCount + "스트라이크 ");
         }
         System.out.println();
     }
 
     public boolean continuesGame() {
-        return strike != 3;
+        return strikeCount != 3;
     }
 }
