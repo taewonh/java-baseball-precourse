@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class UserTest extends AbstractDomainTest {
 
     @Test
-    public void 정답_입력_테스트() {
+    public void 숫자_입력_테스트() {
         String input = "123";
         User user = setInInput(input);
         Assertions.assertEquals(input.length(), user.getNumbers().size());

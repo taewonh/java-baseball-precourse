@@ -10,7 +10,7 @@ import java.util.List;
 public class RefereeTest extends AbstractDomainTest {
 
     @Test
-    public void 게임_종료_판정_테스트() {
+    public void 정답_판정_테스트() {
         Computer computer = new Computer();
         StringBuilder builder = new StringBuilder();
         for (int answer : computer.getNumbers()) {
@@ -23,7 +23,7 @@ public class RefereeTest extends AbstractDomainTest {
     }
 
     @Test
-    public void 게임_계속_진행_테스트() {
+    public void 오답_판정_테스트() {
         Computer computer = new Computer();
         List<Integer> answers = computer.getNumbers();
         List<Integer> noAnswers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
